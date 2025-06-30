@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  bingo:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      SA_PASSWORD: "TwojaHaslo123!"
+      ACCEPT_EULA: "Y"
+      MSSQL_DATABASE: "bingo"
+    ports:
+      - "1433:1433"
+    volumes:
+      - bingo-data:/var/opt/mssql
+
+volumes:
+  bingo-data:
+
