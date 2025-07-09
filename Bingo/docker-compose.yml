@@ -2,16 +2,15 @@ version: '3'
 
 services:
   bingo:
-    image: mcr.microsoft.com/mssql/server
+    image: postgres:latest
     environment:
-      SA_PASSWORD: "TwojaHaslo123!"
-      ACCEPT_EULA: "Y"
-      MSSQL_DATABASE: "bingo"
+      POSTGRES_PASSWORD: "Haslo123"
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "bingo"
     ports:
-      - "1433:1433"
+      - "5432:5432"
     volumes:
-      - bingo-data:/var/opt/mssql
+      - bingo-data:/var/lib/postgresql/data
 
 volumes:
   bingo-data:
-
